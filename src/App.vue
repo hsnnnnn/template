@@ -10,17 +10,21 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  mounted() {
+    created() {
+  fetch('/api/users')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data); // Mock veriler dönecektir
+    });
+}
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 </style>
